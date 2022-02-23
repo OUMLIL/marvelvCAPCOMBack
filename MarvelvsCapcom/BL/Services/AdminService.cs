@@ -31,45 +31,41 @@ namespace MarvelvsCapcom.BL.Services
                 return _adminRepo.getAdminById(id);
             }
         }
-
-        public AdminDTO getAdminByName(string name)
-        {
-            using (AdminRepository _adminRepo = new AdminRepository())
-            {
-                return _adminRepo.getAdminByName(name);
-            }
-        }
         
-        /*public int addAdmin(AdminDTO adminDto, string adminName)
+        public void addAdmin(AdminDTO adminDto)
         {
-            int userId = 0;
-            //first adding the admin as normal user
-            using(UserRepository _userRepo = new UserRepository())
-            {
-                User user = new User
-                {
-                    Id = adminDto.Id,
-                    Username = adminName
-                };
-                _userRepo.AddUser(user.toDto());
-                List < UserDTO > users = _userRepo.getAllUsers();
-                userId = users[users.Count - 1].Id;
-            }
-
-            //then adding the admin
             using (AdminRepository _adminRepo = new AdminRepository())
             {
-                return _adminRepo.addAdmin(adminDto, adminName, userId);
+                try
+                {
+                    _adminRepo.addAdmin(adminDto);
+                } catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+                
             }
         }
-        public int deleteAdmin(int id)
+
+        public void deleteAdmin(int id)
         {
             using (AdminRepository _adminRepo = new AdminRepository())
             {
-                return _adminRepo.deleteAdmin(id);
+                try
+                {
+                    _adminRepo.deleteAdmin(id);
+                } catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+                
             }
-        }*/
-        /*public void updateAdminPassword(AdminDTO adminDto)
+        }
+
+        
+        public void updateAdminPassword(AdminDTO adminDto)
         {
             using (AdminRepository _adminRepo = new AdminRepository())
             {
@@ -83,6 +79,6 @@ namespace MarvelvsCapcom.BL.Services
                     throw;
                 }
             }
-        }*/
+        }
     }
 }

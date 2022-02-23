@@ -33,60 +33,43 @@ namespace MarvelvsCapcom.Controllers
             return _adminService.getAllAdmins();
         }
 
+        [HttpPost("admins")]
+        public void addAdmin(AdminDTO adminDto)
+        {
+            adminDto.CreatePasswordHash(adminDto.Passwd);
+            _adminService.addAdmin(adminDto);
+        }
+
+        /*[HttpPost("admins/login")]
+        public IActionResult loginAdmin(AdminDTO adminDto)
+        {
+            try
+            {
+                _adminService.getAdminById(adminDto.Id);
+            } catch(Exception ex)
+            {
+                return BadRequest("Admin not found");
+            }
+
+            if(!adminDto.VerifyPasswordHash(adminDto.Passwd))
+            {
+                return BadRequest("Password incorrect");
+            }
+
+            return Ok("Access Granted");
+            
+        }*/
+
+        
         /*[HttpPut("admins")]
-        public IActionResult updatePassword(AdminDTO admindto)
+        public IActionResult updatePassword(AdminDTO adminDto, string newPassword)
         {
-           
-           _adminService.updateAdminPassword(admindto);
+            adminDto.CreatePasswordHash(newPassword);
+           _adminService.updateAdminPassword(adminDto);
             return Ok();
-        }*/
-
-        /*[HttpPost("admins")]
-        public void addAdmin(AdminDTO adminDto, string adminName)
-        {
-            _adminService.addAdmin(adminDto, adminName);
-        }*/
-
-
-        /*//[HttpGet("abilities/byID/{id}")]
-        [HttpGet("abilities/{id}")]
-        public AbilityDTO getAbilityByID(int id)
-        {
-            return _abilityservice.getAbilityByID(id);
         }
-
-        *//*
-        [HttpGet("abilities/byName/{name}")]
-        public AbilityDTO getAbilityByName(String name)
-        {
-            return _abilityservice.getAbilityByName(name);
-        }
-        *//*
-
-        [HttpPost("abilities")]
-        *//*public AbilityDTO AbilityDTO([FromBody] String name, [FromBody] int CoolDown, [FromBody] int damage)
-        {
-            return _abilityservice.addAbility(new AbilityDTO())
-        }*//*
-
-        public void addAbility(AbilityDTO abilityDto)
-        {
-            _abilityservice.addAbility(abilityDto);
-
-        }
-
-        //[HttpDelete("abilities/byID/{id}")]
-        [HttpDelete("abilities/{id}")]
-        public int deleteAbility(int id)
-        {
-            return _abilityservice.deleteAbility(id);
-        }
-
-        [HttpPut("abilities")]
-        public int updateAbility(AbilityDTO abilityDTO)
-        {
-            return _abilityservice.updateAbility(abilityDTO);
-        }*/
+        */
+       
 
     }
 }

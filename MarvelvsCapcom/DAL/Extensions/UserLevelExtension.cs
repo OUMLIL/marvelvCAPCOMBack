@@ -16,7 +16,8 @@ namespace MarvelvsCapcom.DAL.Extensions
             {
                 UserId = userLevelDto.UserId,
                 CharacterId = userLevelDto.CharacterId,
-                Level = userLevelDto.Level
+                Level = userLevelDto.Level,
+                Id = userLevelDto.Id
             };
         }
 
@@ -27,7 +28,8 @@ namespace MarvelvsCapcom.DAL.Extensions
             {
                 UserId = userLevel.UserId,
                 CharacterId = userLevel.CharacterId,
-                Level = userLevel.Level
+                Level = userLevel.Level,
+                Id = userLevel.Id
             };
         }
        

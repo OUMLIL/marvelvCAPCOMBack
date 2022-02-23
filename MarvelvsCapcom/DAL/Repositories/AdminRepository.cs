@@ -30,54 +30,52 @@ namespace MarvelvsCapcom.DAL.Repositories
 
         public AdminDTO getAdminById(int id)
         {
-            try {
+            try
+            {
                 Admin admin = _dbcontext.Admins.SingleOrDefault(x => x.Id == id);
                 return admin.toDto();
-            } 
-            catch(Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
                 throw;
             }
         }
 
-        public AdminDTO getAdminByName(string name)
+        public void addAdmin(AdminDTO adminDto)
+        {
+
+            try
+            {
+                Admin admin = adminDto.toEntity();
+                _dbcontext.Admins.Add(admin);
+                _dbcontext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+
+        public void deleteAdmin(int id)
         {   
-            try {
-                int id = _dbcontext.Users.SingleOrDefault(x => x.Username == name).Id;
-                return getAdminById(id);
-            } catch(Exception ex) {
+            try
+            {
+                Admin admin = _dbcontext.Admins.SingleOrDefault(x => x.Id == id);
+                _dbcontext.Admins.Remove(admin);
+                _dbcontext.SaveChanges();
+
+            } catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
                 throw;
             }
-            
         }
 
 
-        /*public int addAdmin(AdminDTO adminDto, string adminName, int adminId)
-        {
-            Admin admin = adminDto.toEntity();
-
-            var ctx = new MRvsCPContext();
-            ctx.Database.ExecuteSqlRaw($"INSERT INTO admins VALUES ({adminId}, {admin.Passwd})");
-
-            //_dbcontext.Admins.Add(admin);
-            //_dbcontext.SaveChanges();
-
-            return 1;
-
-        }
-
-
-        public int deleteAdmin(int id)
-        {
-            Admin admin = _dbcontext.Admins.SingleOrDefault(x => x.Id == id);
-            _dbcontext.Admins.Remove(admin);
-            _dbcontext.SaveChanges();
-            return 1;
-        }*/
-
-
-        /*public void updateAdminPassword(AdminDTO adminDto)
+        public void updateAdminPassword(AdminDTO adminDto)
         {
             try
             {
@@ -90,7 +88,7 @@ namespace MarvelvsCapcom.DAL.Repositories
                 Console.WriteLine(ex.Message);
                 throw;
             }
-        }*/
+        }
     }
 }
 

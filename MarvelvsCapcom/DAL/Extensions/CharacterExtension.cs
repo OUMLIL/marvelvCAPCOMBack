@@ -20,7 +20,8 @@ namespace MarvelvsCapcom.DAL.Extensions
                 Ab1Id = characterDto.Ab1Id,
                 Ab2Id = characterDto.Ab2Id,
                 Ab3Id = characterDto.Ab3Id,
-                Ab4Id = characterDto.Ab4Id
+                Ab4Id = characterDto.Ab4Id,
+                HeathPoints = characterDto.HeathPoints
             };
         }
 
@@ -35,7 +36,8 @@ namespace MarvelvsCapcom.DAL.Extensions
                 Ab1Id = character.Ab1Id,
                 Ab2Id = character.Ab2Id,
                 Ab3Id = character.Ab3Id,
-                Ab4Id = character.Ab4Id
+                Ab4Id = character.Ab4Id,
+                HeathPoints = character.HeathPoints
             };
         }
 

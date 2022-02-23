@@ -25,7 +25,7 @@ namespace MarvelvsCapcom.DAL.Extensions
             return new AdminDTO
             {
                 Id = admin.Id,
-                Passwd = admin.Passwd
+                Passwd = admin.Passwd,
             };
         }
 
