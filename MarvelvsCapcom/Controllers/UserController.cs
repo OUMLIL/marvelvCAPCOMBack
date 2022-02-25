@@ -12,6 +12,8 @@ using MarvelvsCapcom.DAL.Models;
 using MarvelvsCapcom.DAL.Extensions;
 using MarvelvsCapcom.DAL.Repositories;
 using MarvelvsCapcom.BL.Services;
+using System.Web;
+
 
 namespace MarvelvsCapcom.Controllers
 {
