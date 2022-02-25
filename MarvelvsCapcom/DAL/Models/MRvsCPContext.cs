@@ -42,7 +42,9 @@ namespace MarvelvsCapcom.DAL.Models
                 entity.HasIndex(e => e.AbName, "UQ__abilitie__721AEC8D8AA6C04D")
                     .IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.AbName)
                     .HasMaxLength(30)
@@ -58,7 +60,9 @@ namespace MarvelvsCapcom.DAL.Models
             {
                 entity.ToTable("admins");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Passwd)
                     .HasMaxLength(1024)
@@ -73,7 +77,9 @@ namespace MarvelvsCapcom.DAL.Models
                 entity.HasIndex(e => e.Name, "UQ__arena__72E12F1B30EBC79C")
                     .IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.ArenaImg)
                     .HasMaxLength(50)
@@ -93,7 +99,9 @@ namespace MarvelvsCapcom.DAL.Models
                 entity.HasIndex(e => e.CharName, "UQ__characte__ABC56DFBB2BB15F0")
                     .IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Ab1Id).HasColumnName("ab1ID");
 
@@ -119,32 +127,34 @@ namespace MarvelvsCapcom.DAL.Models
                     .WithMany(p => p.CharacterAb1s)
                     .HasForeignKey(d => d.Ab1Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__character__ab1ID__76969D2E");
+                    .HasConstraintName("FK__character__ab1ID__40058253");
 
                 entity.HasOne(d => d.Ab2)
                     .WithMany(p => p.CharacterAb2s)
                     .HasForeignKey(d => d.Ab2Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__character__ab2ID__7B5B524B");
+                    .HasConstraintName("FK__character__ab2ID__40F9A68C");
 
                 entity.HasOne(d => d.Ab3)
                     .WithMany(p => p.CharacterAb3s)
                     .HasForeignKey(d => d.Ab3Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__character__ab3ID__7C4F7684");
+                    .HasConstraintName("FK__character__ab3ID__41EDCAC5");
 
                 entity.HasOne(d => d.Ab4)
                     .WithMany(p => p.CharacterAb4s)
                     .HasForeignKey(d => d.Ab4Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__character__ab4ID__7D439ABD");
+                    .HasConstraintName("FK__character__ab4ID__42E1EEFE");
             });
 
             modelBuilder.Entity<Round>(entity =>
             {
                 entity.ToTable("rounds");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Arena).HasColumnName("arena");
 
@@ -170,49 +180,54 @@ namespace MarvelvsCapcom.DAL.Models
                     .WithMany(p => p.Rounds)
                     .HasForeignKey(d => d.Arena)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__rounds__arena__05D8E0BE");
+                    .HasConstraintName("FK__rounds__arena__3864608B");
 
                 entity.HasOne(d => d.FirstP)
                     .WithMany(p => p.RoundFirstPs)
                     .HasForeignKey(d => d.FirstPid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__rounds__firstPID__2CF2ADDF");
+                    .HasConstraintName("FK__rounds__firstPID__3587F3E0");
 
                 entity.HasOne(d => d.P1char1Navigation)
                     .WithMany(p => p.RoundP1char1Navigations)
                     .HasForeignKey(d => d.P1char1)
-                    .HasConstraintName("FK__rounds__p1char1__00200768");
+                    .HasConstraintName("FK__rounds__p1char1__3A4CA8FD");
 
                 entity.HasOne(d => d.P1char2Navigation)
                     .WithMany(p => p.RoundP1char2Navigations)
                     .HasForeignKey(d => d.P1char2)
-                    .HasConstraintName("FK__rounds__p1char2__01142BA1");
+                    .HasConstraintName("FK__rounds__p1char2__3B40CD36");
 
                 entity.HasOne(d => d.P1char3Navigation)
                     .WithMany(p => p.RoundP1char3Navigations)
                     .HasForeignKey(d => d.P1char3)
-                    .HasConstraintName("FK__rounds__p1char3__02084FDA");
+                    .HasConstraintName("FK__rounds__p1char3__3C34F16F");
 
                 entity.HasOne(d => d.P2char1Navigation)
                     .WithMany(p => p.RoundP2char1Navigations)
                     .HasForeignKey(d => d.P2char1)
-                    .HasConstraintName("FK__rounds__p2char1__02FC7413");
+                    .HasConstraintName("FK__rounds__p2char1__3D2915A8");
 
                 entity.HasOne(d => d.P2char2Navigation)
                     .WithMany(p => p.RoundP2char2Navigations)
                     .HasForeignKey(d => d.P2char2)
-                    .HasConstraintName("FK__rounds__p2char2__03F0984C");
+                    .HasConstraintName("FK__rounds__p2char2__3E1D39E1");
 
                 entity.HasOne(d => d.P2char3Navigation)
                     .WithMany(p => p.RoundP2char3Navigations)
                     .HasForeignKey(d => d.P2char3)
-                    .HasConstraintName("FK__rounds__p2char3__04E4BC85");
+                    .HasConstraintName("FK__rounds__p2char3__3F115E1A");
 
                 entity.HasOne(d => d.SecondP)
                     .WithMany(p => p.RoundSecondPs)
                     .HasForeignKey(d => d.SecondPid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__rounds__secondPI__2DE6D218");
+                    .HasConstraintName("FK__rounds__secondPI__367C1819");
+
+                entity.HasOne(d => d.WinnerNavigation)
+                    .WithMany(p => p.RoundWinnerNavigations)
+                    .HasForeignKey(d => d.Winner)
+                    .HasConstraintName("FK__rounds__winner__395884C4");
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -222,7 +237,9 @@ namespace MarvelvsCapcom.DAL.Models
                 entity.HasIndex(e => e.Username, "UQ__users__F3DBC57273F833AA")
                     .IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Username)
                     .HasMaxLength(25)
@@ -234,7 +251,9 @@ namespace MarvelvsCapcom.DAL.Models
             {
                 entity.ToTable("userLevel");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.CharacterId).HasColumnName("characterID");
 
@@ -246,7 +265,7 @@ namespace MarvelvsCapcom.DAL.Models
                     .WithMany(p => p.UserLevels)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__userLevel__userI__282DF8C2");
+                    .HasConstraintName("FK__userLevel__userI__37703C52");
             });
 
             OnModelCreatingPartial(modelBuilder);

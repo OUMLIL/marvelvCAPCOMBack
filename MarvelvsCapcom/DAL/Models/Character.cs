@@ -15,7 +15,6 @@ namespace MarvelvsCapcom.DAL.Models
             RoundP2char3Navigations = new HashSet<Round>();
         }
 
-        public int Id { get; set; }
         public string CharName { get; set; } = null!;
         public string? Side { get; set; }
         public int Ab1Id { get; set; }
@@ -23,6 +22,7 @@ namespace MarvelvsCapcom.DAL.Models
         public int Ab3Id { get; set; }
         public int Ab4Id { get; set; }
         public int? HeathPoints { get; set; }
+        public int Id { get; set; }
 
         public virtual Ability Ab1 { get; set; } = null!;
         public virtual Ability Ab2 { get; set; } = null!;

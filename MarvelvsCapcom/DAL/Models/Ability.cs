@@ -13,10 +13,10 @@ namespace MarvelvsCapcom.DAL.Models
             CharacterAb4s = new HashSet<Character>();
         }
 
-        public int Id { get; set; }
         public string AbName { get; set; } = null!;
         public int CoolDown { get; set; }
         public int Damage { get; set; }
+        public int Id { get; set; }
 
         public virtual ICollection<Character> CharacterAb1s { get; set; }
         public virtual ICollection<Character> CharacterAb2s { get; set; }

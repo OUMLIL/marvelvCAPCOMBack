@@ -9,14 +9,16 @@ namespace MarvelvsCapcom.DAL.Models
         {
             RoundFirstPs = new HashSet<Round>();
             RoundSecondPs = new HashSet<Round>();
+            RoundWinnerNavigations = new HashSet<Round>();
             UserLevels = new HashSet<UserLevel>();
         }
 
-        public int Id { get; set; }
         public string? Username { get; set; }
+        public int Id { get; set; }
 
         public virtual ICollection<Round> RoundFirstPs { get; set; }
         public virtual ICollection<Round> RoundSecondPs { get; set; }
+        public virtual ICollection<Round> RoundWinnerNavigations { get; set; }
         public virtual ICollection<UserLevel> UserLevels { get; set; }
     }
 }

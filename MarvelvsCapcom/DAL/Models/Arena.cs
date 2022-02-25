@@ -10,9 +10,9 @@ namespace MarvelvsCapcom.DAL.Models
             Rounds = new HashSet<Round>();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string? ArenaImg { get; set; }
+        public int Id { get; set; }
 
         public virtual ICollection<Round> Rounds { get; set; }
     }
