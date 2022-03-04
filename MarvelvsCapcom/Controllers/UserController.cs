@@ -12,13 +12,15 @@ using MarvelvsCapcom.DAL.Models;
 using MarvelvsCapcom.DAL.Extensions;
 using MarvelvsCapcom.DAL.Repositories;
 using MarvelvsCapcom.BL.Services;
+using MarvelvsCapcom.ViewModels;
 using System.Web;
 
 
 namespace MarvelvsCapcom.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
+    
 
     public class UserController : ControllerBase
     {
@@ -31,9 +33,10 @@ namespace MarvelvsCapcom.Controllers
         }
 
         [HttpGet("users")]
-        public IList<UserDTO> getAll()
+        public IActionResult getAll()
         {
-            return _userservice.getUsers();
+            Console.WriteLine("GET CALL");
+            return Ok(_userservice.getUsers());
         }
 
         [HttpGet("users/{id}")]
@@ -43,9 +46,10 @@ namespace MarvelvsCapcom.Controllers
         }
 
         [HttpPost("users/add")]
-        public void addUser(UserDTO user)
+        public void addUser([FromBody] UserDTO userVM)
         {
-            _userservice.addUser(user);
+            Console.WriteLine("ADD FUNCTION CALLED");
+            _userservice.addUser(userVM);
         }
 
         [HttpPut("users")]
