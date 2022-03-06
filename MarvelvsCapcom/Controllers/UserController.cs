@@ -36,17 +36,32 @@ namespace MarvelvsCapcom.Controllers
             return _userservice.getUsers();
         }
 
-        [HttpGet("users/{id}")]
+        [HttpGet("users/byId/{id}")]
         public UserDTO getUserById(int id)
         {
             return _userservice.getUsersById(id);
         }
 
-        [HttpPost("users/add")]
-        public void addUser(UserDTO user)
+        [HttpGet("users/byUsername/{username}")]
+        public IActionResult getUserByUsername(string username)
         {
-            _userservice.addUser(user);
+            UserDTO user = new UserDTO();
+            try
+            {
+                user = _userservice.getUsersByUsername(username);
+            } catch (Exception ex)
+            {
+                return BadRequest("");
+            }
+            return Ok(user);
+
         }
+
+        /*[HttpPost("users")]
+        public int addUser(UserDTO user)
+        {
+            return _userservice.addUser(user);
+        }*/
 
         [HttpPut("users")]
         public void updateUser(UserDTO user)
@@ -58,6 +73,19 @@ namespace MarvelvsCapcom.Controllers
         public void deleteUser(int id)
         {
             _userservice.deleteUser(id);
+        }
+
+        [HttpPost("users")]
+        public IList<UserDTO> manyadd(UserDTO[] usersDto)
+        {
+            return _userservice.manyadd(usersDto);
+        }
+
+        [HttpGet("users/user1/{name1}/user2/{name2}")]
+        public IList<UserDTO> GetUsersGame(String name1, String name2)
+        {
+            String[] names = { name1, name2 };
+            return _userservice.GetUsersGame(names);
         }
 
     }

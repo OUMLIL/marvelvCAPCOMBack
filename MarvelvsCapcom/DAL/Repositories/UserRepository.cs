@@ -25,24 +25,66 @@ namespace MarvelvsCapcom.DAL.Repositories
             return _dbcontext.Users.SingleOrDefault(x => x.Id == id).toDto();
         }
 
-        public void AddUser(UserDTO user)
+        public UserDTO getUserByName(string username)
         {
-            _dbcontext.Users.Add(user.toEntity());
+            try
+            {
+                return _dbcontext.Users.Single(x => x.Username == username).toDto();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+           
+        }
+
+        public int AddUser(UserDTO userDto)
+        {
+            User user = userDto.toEntity();
+            user.Id = _dbcontext.Users.Count();
+            _dbcontext.Users.Add(user);
             _dbcontext.SaveChanges();
+            return user.Id;
         }
 
         public void deleteUser(int id)
         {
-            _dbcontext.Users.Remove(getUserById(id).toEntity());
-            _dbcontext.SaveChanges();
+            User user = _dbcontext.Users.SingleOrDefault(x => x.Id == id);
+            _dbcontext.Users.Remove(user);
+            _dbcontext.SaveChanges(); 
         }
 
         public void updateUser(UserDTO userDto)
         {
+
             User user = userDto.toEntity();
             _dbcontext.Users.Update(user);
             _dbcontext.SaveChanges();
 
+        }
+
+        public IList<UserDTO> manyadd(UserDTO[] usersDto)
+        {
+            IList<UserDTO> users = new List<UserDTO>();
+            foreach(UserDTO userDto in usersDto)
+            {
+                User user = userDto.toEntity();
+                user.Id = _dbcontext.Users.Count();
+                _dbcontext.Users.Add(user);
+                _dbcontext.SaveChanges();
+                users.Add(user.toDto());
+            }
+            return users;
+        }
+
+        public IList<UserDTO> GetUsersGame(String[] names)
+        {
+            List<UserDTO> users = new List<UserDTO>();
+            foreach(String name in names)
+            {
+                users.Add(_dbcontext.Users.SingleOrDefault(x => x.Username == name).toDto());
+            }
+            return users;
         }
 
     }
