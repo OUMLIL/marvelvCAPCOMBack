@@ -11,7 +11,10 @@
         public int? P2char1 { get; set; }
         public int? P2char2 { get; set; }
         public int? P2char3 { get; set; }
-        public int? Winner { get; set; }
+        public UserViewModel? Winner { get; set; }
         public int Arena { get; set; }
     }
 }
+
+
+//------> name1/id/ability/id/attaque/name2/id
