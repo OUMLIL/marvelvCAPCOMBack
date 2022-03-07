@@ -355,7 +355,6 @@ MigrationBackup/
 *.v2
 *.v1
 .vs/MarvelvsCapcom/v17/.suo
-*.v2
-.vs/MarvelvsCapcom/v17/.suo
 *.dll
 *.pdb
+*.cache
