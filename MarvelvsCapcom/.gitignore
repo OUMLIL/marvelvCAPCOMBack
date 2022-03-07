@@ -17,19 +17,19 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+MarvelvsCapcom/[Dd]ebug/
+MarvelvsCapcom/[Dd]ebugPublic/
+MarvelvsCapcom/[Rr]elease/
+MarvelvsCapcom/[Rr]eleases/
+MarvelvsCapcom/x64/
+MarvelvsCapcom/x86/
+MarvelvsCapcom/[Aa][Rr][Mm]/
+MarvelvsCapcom/[Aa][Rr][Mm]64/
+MarvelvsCapcom/bld/
+MarvelvsCapcom/[Bb]in/
+MarvelvsCapcom/[Oo]bj/
+MarvelvsCapcom/[Ll]og/
+MarvelvsCapcom/[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
