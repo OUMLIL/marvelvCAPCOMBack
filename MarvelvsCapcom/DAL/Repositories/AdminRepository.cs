@@ -23,7 +23,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             }
             catch(Exception ex) {
                 Console.WriteLine(ex.Message);
-                throw;
+                throw ex;
             }
             
         }
@@ -38,7 +38,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -54,7 +54,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -70,7 +70,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw;
+                throw ex;
             }
         }
 
@@ -86,7 +86,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw;
+                throw ex;
             }
         }
     }

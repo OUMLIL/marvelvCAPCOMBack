@@ -25,6 +25,18 @@ namespace MarvelvsCapcom.DAL.Repositories
             return _dbcontext.Users.SingleOrDefault(x => x.Id == id).toDto();
         }
 
+        public UserDTO getUserByName(string name)
+        {   
+            try
+            {
+                return _dbcontext.Users.Single(x => x.Username == name).toDto();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
+        }
         public void AddUser(UserDTO user)
         {
             _dbcontext.Users.Add(user.toEntity());

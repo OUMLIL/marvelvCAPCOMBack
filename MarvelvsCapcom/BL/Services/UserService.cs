@@ -19,11 +19,27 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
+
         public UserDTO getUsersById(int id)
         {
             using (UserRepository _usersRepo = new UserRepository())
             {
                 return _usersRepo.getUserById(id);
+            }
+        }
+
+        public UserDTO getUserByName(string name)
+        {
+            using (UserRepository _usersRepo = new UserRepository())
+            {
+                try
+                {
+                    return _usersRepo.getUserByName(name);
+                } catch (Exception ex)
+                {
+                    throw;
+                }
+                
             }
         }
 

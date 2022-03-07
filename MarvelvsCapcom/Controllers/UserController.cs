@@ -38,6 +38,22 @@ namespace MarvelvsCapcom.Controllers
             Console.WriteLine("GET CALL");
             return Ok(_userservice.getUsers());
         }
+        
+        [HttpGet("users/name")]
+        public IActionResult getUserByName(string name)
+        {   
+            UserDTO usr = new UserDTO();
+            try
+            {
+                usr = _userservice.getUserByName(name);
+            } catch (Exception ex)
+            {
+                Console.WriteLine("sdkjqhkjdshjkfgdsjkhfgdsj");
+                return BadRequest("");
+            }
+            return Ok(usr);
+            
+        }
 
         [HttpGet("users/{id}")]
         public UserDTO getUserById(int id)
