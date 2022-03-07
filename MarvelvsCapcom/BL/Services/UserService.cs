@@ -28,26 +28,42 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
-        public UserDTO getUserByName(string name)
+        public UserDTO getUsersByUsername(string username)
         {
-            using (UserRepository _usersRepo = new UserRepository())
+            using(UserRepository _usersRepo = new UserRepository())
             {
                 try
                 {
-                    return _usersRepo.getUserByName(name);
+                    return _usersRepo.getUserByName(username);
                 } catch (Exception ex)
                 {
                     throw;
                 }
-                
             }
         }
 
-        public void addUser(UserDTO user)
+        public int addUser(UserDTO user)
         {
             using (UserRepository _usersRepo = new UserRepository())
             {
-                _usersRepo.AddUser(user);
+                return _usersRepo.AddUser(user);
+            }
+        }
+
+        public IList<UserDTO> manyadd(UserDTO[] usersDto)
+        {
+            using (UserRepository _usersRepo = new UserRepository())
+            {
+                return _usersRepo.manyadd(usersDto);
+            }
+        }
+
+
+        public IList<UserDTO> GetUsersGame(String[] names)
+        {
+            using(UserRepository _usersRepo = new UserRepository())
+            {
+                return _usersRepo.GetUsersGame(names);
             }
         }
 
