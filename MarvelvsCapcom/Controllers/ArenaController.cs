@@ -38,7 +38,7 @@ namespace MarvelvsCapcom.Controllers
         }
 
         [HttpPost("arenas")]
-        public int addArena(ArenaDTO arenaDto)
+        public ArenaDTO addArena(ArenaDTO arenaDto)
         {
             return _arenaService.addArena(arenaDto);
         }

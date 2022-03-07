@@ -78,12 +78,11 @@ namespace MarvelvsCapcom.Controllers
             return _abilityservice.addAbility(new AbilityDTO())
         }*/
 
-        public IActionResult addCharacter(CharacterDTO characterDto)
+        public CharacterDTO addCharacter(CharacterDTO characterDto)
         {
            // try
             //{
-                _characterservice.addCharacter(characterDto);
-                return Ok();
+                return _characterservice.addCharacter(characterDto);
             //}
             /*catch (DatabaseException e)
             {

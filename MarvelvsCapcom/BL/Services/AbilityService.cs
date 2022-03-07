@@ -37,7 +37,7 @@ namespace MarvelvsCapcom.BL.Services
         }
         */
 
-        public int addAbility(AbilityDTO abilityDto)
+        public AbilityDTO addAbility(AbilityDTO abilityDto)
         {
             using (AbilityRepository _abilitiesRepo = new AbilityRepository())
             {

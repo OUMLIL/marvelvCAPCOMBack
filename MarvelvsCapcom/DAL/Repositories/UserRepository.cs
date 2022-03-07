@@ -39,13 +39,13 @@ namespace MarvelvsCapcom.DAL.Repositories
            
         }
 
-        public int AddUser(UserDTO userDto)
+        public UserDTO AddUser(UserDTO userDto)
         {
             User user = userDto.toEntity();
             user.Id = _dbcontext.Users.Count();
             _dbcontext.Users.Add(user);
             _dbcontext.SaveChanges();
-            return user.Id;
+            return user.toDto();
         }
 
         public void deleteUser(int id)

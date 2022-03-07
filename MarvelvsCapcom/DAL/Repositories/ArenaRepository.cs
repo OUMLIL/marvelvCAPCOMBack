@@ -26,12 +26,13 @@ namespace MarvelvsCapcom.DAL.Repositories
             return arena.toDto();
         }
 
-        public int addArena(ArenaDTO arenaDto)
+        public ArenaDTO addArena(ArenaDTO arenaDto)
         {
             Arena arena = arenaDto.toEntity();
+            arena.Id = _dbcontext.Arenas.Count();
             _dbcontext.Arenas.Add(arena);
             _dbcontext.SaveChanges();
-            return 1;
+            return arena.toDto();
         }
 
         public int deleteArena(int id)

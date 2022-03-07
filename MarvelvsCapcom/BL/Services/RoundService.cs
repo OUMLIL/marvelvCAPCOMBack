@@ -27,7 +27,7 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
-        public int addRound(RoundDTO roundDto)
+        public RoundDTO addRound(RoundDTO roundDto)
         {
             using (RoundRepository _roundsRepo = new RoundRepository())
             {

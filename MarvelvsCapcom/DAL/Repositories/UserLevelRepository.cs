@@ -26,12 +26,13 @@ namespace MarvelvsCapcom.DAL.Repositories
             return userLevel.toDto();
         }
 
-        public int addUserLevel(UserLevelDTO userLevelDto)
+        public UserLevelDTO addUserLevel(UserLevelDTO userLevelDto)
         {
-            UserLevel userLevel = userLevelDto.toEntity(); 
+            UserLevel userLevel = userLevelDto.toEntity();
+            userLevel.Id = _dbcontext.UserLevels.Count();
             _dbcontext.UserLevels.Add(userLevel);
             _dbcontext.SaveChanges();
-            return 1;
+            return userLevel.toDto();
         }
 
         public int deleteUserLevel(int id)

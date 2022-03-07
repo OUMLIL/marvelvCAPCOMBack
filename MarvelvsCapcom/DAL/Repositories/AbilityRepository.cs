@@ -33,13 +33,14 @@ namespace MarvelvsCapcom.DAL.Repositories
             return ability.toDto();
         }
         */
-        public int addAbility(AbilityDTO abilityDto)
+        public AbilityDTO addAbility(AbilityDTO abilityDto)
         {
             Ability ability = abilityDto.toEntity();
+            ability.Id = _dbcontext.Abilities.Count();
             _dbcontext.Abilities.Add(ability);
             _dbcontext.SaveChanges();
 
-            return 1; //exceptions to add
+            return ability.toDto(); //exceptions to add
 
         }
 

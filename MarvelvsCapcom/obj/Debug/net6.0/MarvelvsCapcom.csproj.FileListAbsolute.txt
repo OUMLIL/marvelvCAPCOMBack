@@ -853,3 +853,8 @@ C:\Users\donzy\Desktop\MRVvCAPCOM\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net
 C:\Users\donzy\Desktop\MRVvCAPCOM\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\donzy\Desktop\MRVvCAPCOM\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\donzy\Desktop\MRVvCAPCOM\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Nada\source\repos\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\Nada\source\repos\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Nada\source\repos\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Nada\source\repos\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\Nada\source\repos\marvelvCAPCOMBack\MarvelvsCapcom\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
