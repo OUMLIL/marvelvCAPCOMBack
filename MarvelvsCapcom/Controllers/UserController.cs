@@ -45,7 +45,7 @@ namespace MarvelvsCapcom.Controllers
             UserDTO usr = new UserDTO();
             try
             {
-                usr = _userservice.getUserByName(name);
+                usr = _userservice.getUsersByUsername(name);
             } catch (Exception ex)
             {
                 Console.WriteLine("sdkjqhkjdshjkfgdsjkhfgdsj");
