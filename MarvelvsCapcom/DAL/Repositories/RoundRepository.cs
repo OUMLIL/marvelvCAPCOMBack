@@ -26,12 +26,13 @@ namespace MarvelvsCapcom.DAL.Repositories
             return round.toDto();
         }
 
-        public int addRound(RoundDTO roundDto)
+        public RoundDTO addRound(RoundDTO roundDto)
         {
             Round round = roundDto.toEntity();
+            round.Id = _dbcontext.Rounds.Count();
             _dbcontext.Rounds.Add(round);
             _dbcontext.SaveChanges();
-            return 1;
+            return round.toDto();
         }
 
         public int updateRound(RoundDTO roundDto)

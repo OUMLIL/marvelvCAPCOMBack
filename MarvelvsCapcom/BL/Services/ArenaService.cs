@@ -28,7 +28,7 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
-        public int addArena(ArenaDTO arenaDto)
+        public ArenaDTO addArena(ArenaDTO arenaDto)
         {
             using (ArenaRepository _arenaRepository = new ArenaRepository())
             {

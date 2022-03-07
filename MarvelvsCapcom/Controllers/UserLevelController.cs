@@ -38,7 +38,7 @@ namespace MarvelvsCapcom.Controllers
         }
 
         [HttpPost("userLevels")]
-        public int addUserLevel(UserLevelDTO userLevelDto)
+        public UserLevelDTO addUserLevel(UserLevelDTO userLevelDto)
         {
             return _userLevelService.addUserLevel(userLevelDto);
         }

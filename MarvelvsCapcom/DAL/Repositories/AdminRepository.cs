@@ -48,6 +48,7 @@ namespace MarvelvsCapcom.DAL.Repositories
             try
             {
                 Admin admin = adminDto.toEntity();
+                admin.Id = _dbcontext.Admins.Count();
                 _dbcontext.Admins.Add(admin);
                 _dbcontext.SaveChanges();
             }

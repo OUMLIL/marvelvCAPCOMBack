@@ -27,7 +27,7 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
-        public int addUserLevel(UserLevelDTO userLevelDto)
+        public UserLevelDTO addUserLevel(UserLevelDTO userLevelDto)
         {
             using (UserLevelRepository _userLevelRepository = new UserLevelRepository())
             {

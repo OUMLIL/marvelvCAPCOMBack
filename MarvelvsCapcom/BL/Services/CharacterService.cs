@@ -36,7 +36,7 @@ namespace MarvelvsCapcom.BL.Services
             }
         }*/
 
-        public int addCharacter(CharacterDTO characterDto)
+        public CharacterDTO addCharacter(CharacterDTO characterDto)
         {
             using (CharacterRepository _charactersRepo = new CharacterRepository())
             {

@@ -54,9 +54,9 @@ namespace MarvelvsCapcom.Controllers
             return _abilityservice.addAbility(new AbilityDTO())
         }*/
 
-        public void addAbility(AbilityDTO abilityDto) 
+        public AbilityDTO addAbility(AbilityDTO abilityDto) 
         {
-            _abilityservice.addAbility(abilityDto);
+            return _abilityservice.addAbility(abilityDto);
             
         }
 

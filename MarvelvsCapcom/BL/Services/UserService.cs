@@ -42,7 +42,7 @@ namespace MarvelvsCapcom.BL.Services
             }
         }
 
-        public int addUser(UserDTO user)
+        public UserDTO addUser(UserDTO user)
         {
             using (UserRepository _usersRepo = new UserRepository())
             {

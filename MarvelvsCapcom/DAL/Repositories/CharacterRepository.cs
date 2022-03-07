@@ -36,13 +36,13 @@ namespace MarvelvsCapcom.DAL.Repositories
         }
         */
 
-        public int addCharacter(CharacterDTO characterDto)
+        public CharacterDTO addCharacter(CharacterDTO characterDto)
         {
             Character character = characterDto.toEntity();
+            character.Id = _dbcontext.Characters.Count();
             _dbcontext.Characters.Add(character);
             _dbcontext.SaveChanges();
-            return 1; //exceptions to add
-
+            return character.toDto();
         }
 
         public int updateCharacter(CharacterDTO characterDto)
