@@ -1,4 +1,7 @@
-﻿namespace MarvelvsCapcom.ViewModels
+﻿using MarvelvsCapcom.ViewModels;
+using MarvelvsCapcom.DTO.ModelsDTO;
+
+namespace MarvelvsCapcom.ViewModels
 {
     public class RoundViewModel
     {
@@ -11,7 +14,7 @@
         public int? P2char1 { get; set; }
         public int? P2char2 { get; set; }
         public int? P2char3 { get; set; }
-        public UserViewModel? Winner { get; set; }
+        public int? Winner { get; set; }
         public int Arena { get; set; }
     }
 }

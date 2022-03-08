@@ -12,6 +12,7 @@ using MarvelvsCapcom.DAL.Models;
 using MarvelvsCapcom.DAL.Extensions;
 using MarvelvsCapcom.DAL.Repositories;
 using MarvelvsCapcom.BL.Services;
+using MarvelvsCapcom.ViewModels;
 
 namespace MarvelvsCapcom.Controllers
 {
@@ -38,9 +39,9 @@ namespace MarvelvsCapcom.Controllers
         }
 
         [HttpPost("rounds")]
-        public RoundDTO addRound(RoundDTO roundDto)
-        {
-            return _roundService.addRound(roundDto);
+        public RoundDTO addRound(RoundDTO round)
+        {   
+            return _roundService.addRound(round);
         }
 
         [HttpPut("rounds")]
