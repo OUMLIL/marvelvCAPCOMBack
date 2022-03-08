@@ -1,9 +1,12 @@
-﻿namespace MarvelvsCapcom.ViewModels
+﻿using MarvelvsCapcom.DTO.ModelsDTO;
+
+namespace MarvelvsCapcom.ViewModels
 {
     public class PlayerViewModel
     {
-        CharacterViewModel Character1 { get; set; }
-        CharacterViewModel Character2 { get; set; }
-        CharacterViewModel Character3 { get; set; } 
+        CharacterDTO Character1 { get; set; }
+        CharacterDTO Character2 { get; set; }
+        CharacterDTO Character3 { get; set; } 
+
     }
 }

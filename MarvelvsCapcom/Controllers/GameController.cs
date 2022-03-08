@@ -26,5 +26,12 @@ namespace MarvelvsCapcom.Controllers
         {
          
         }*/
+
+        [HttpGet ("games")]
+        public GameDTO createGame(GameDTO game)
+        {
+            Console.WriteLine(game.ToString());
+            return game;
+        }
     }
 }

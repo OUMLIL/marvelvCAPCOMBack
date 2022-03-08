@@ -1,4 +1,4 @@
-﻿namespace MarvelvsCapcom.ViewModels
+﻿/*namespace MarvelvsCapcom.ViewModels
 {
     public class GameViewModel
     {
@@ -6,3 +6,4 @@
         public PlayerViewModel Player2 { get; set; }
     }
 }
+*/

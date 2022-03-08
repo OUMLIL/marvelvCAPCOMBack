@@ -41,6 +41,8 @@ namespace MarvelvsCapcom.Controllers
         [HttpPost("rounds")]
         public RoundDTO addRound(RoundDTO round)
         {   
+
+            //create PlayerViewModel
             return _roundService.addRound(round);
         }
 
