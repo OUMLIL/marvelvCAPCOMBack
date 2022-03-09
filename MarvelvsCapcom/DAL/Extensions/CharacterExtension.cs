@@ -59,7 +59,7 @@ namespace MarvelvsCapcom.DAL.Extensions
                 Ab3Id = character.Ab3Id,
                 Ab4Id = character.Ab4Id,
 
-                HeathPoints = character.HeathPoints
+                HeathPoints = (int) character.HeathPoints //converted from int? to int
             };
 
         }
