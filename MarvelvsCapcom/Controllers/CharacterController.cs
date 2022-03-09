@@ -45,7 +45,7 @@ namespace MarvelvsCapcom.Controllers
                 tmp.Ab2 = _abilityService.getAbilityByID(character.Ab2Id);
                 tmp.Ab3 = _abilityService.getAbilityByID(character.Ab3Id);
                 tmp.Ab4 = _abilityService.getAbilityByID(character.Ab4Id);
-
+                tmp.Side = character.Side;
                 tmp.Ab1Id = character.Ab1Id;
                 tmp.Ab2Id = character.Ab2Id;
                 tmp.Ab3Id = character.Ab3Id;
