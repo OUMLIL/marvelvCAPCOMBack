@@ -41,6 +41,7 @@ namespace MarvelvsCapcom.Controllers
                 CharacterViewModel tmp = new CharacterViewModel();
                 tmp.Id= character.Id;
                 tmp.CharName= character.CharName;
+                tmp.Side = character.Side;
                 tmp.Ab1 = _abilityService.getAbilityByID(character.Ab1Id);
                 tmp.Ab2 = _abilityService.getAbilityByID(character.Ab2Id);
                 tmp.Ab3 = _abilityService.getAbilityByID(character.Ab3Id);
