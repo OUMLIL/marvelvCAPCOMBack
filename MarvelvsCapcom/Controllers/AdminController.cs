@@ -27,12 +27,14 @@ namespace MarvelvsCapcom.Controllers
             _adminService = new AdminService();
         }
 
+        //to remove pour le rendu final
         [HttpGet("admins")]
         public IList<AdminDTO> GetAdmins()
         {
             return _adminService.getAllAdmins();
         }
 
+        //to remove pour le rendu final
         [HttpPost("admins")]
         public void addAdmin(AdminDTO adminDto)
         {
@@ -40,36 +42,26 @@ namespace MarvelvsCapcom.Controllers
             _adminService.addAdmin(adminDto);
         }
 
-        /*[HttpPost("admins/login")]
+        [HttpPost("admins/login")]
         public IActionResult loginAdmin(AdminDTO adminDto)
         {
+            AdminDTO AdmServer;
             try
             {
-                _adminService.getAdminById(adminDto.Id);
-            } catch(Exception ex)
+                AdmServer = _adminService.getAdminById(adminDto.Id);
+            }
+            catch (Exception ex)
             {
                 return BadRequest("Admin not found");
             }
 
-            if(!adminDto.VerifyPasswordHash(adminDto.Passwd))
+            if (adminDto.Passwd != AdmServer.Passwd)
             {
                 return BadRequest("Password incorrect");
             }
 
             return Ok("Access Granted");
-            
-        }*/
-
-        
-        /*[HttpPut("admins")]
-        public IActionResult updatePassword(AdminDTO adminDto, string newPassword)
-        {
-            adminDto.CreatePasswordHash(newPassword);
-           _adminService.updateAdminPassword(adminDto);
-            return Ok();
         }
-        */
-       
 
     }
 }
