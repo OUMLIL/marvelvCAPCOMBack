@@ -30,20 +30,47 @@ namespace MarvelvsCapcom.Controllers
         {
          
         }*/
+        public GameViewModel _game;
+        /// <summary>  
+        /// Injecting dependency of the Singleton class - CustomerFeatures  
+        /// </summary>  
+        /// <param name="customerFeatures"></param>  
+        public GameController(GameViewModel game)
+        {
+            _game = game;
+        }
+
 
         [HttpPost("games")]
-        public IActionResult createGame(GameViewModel game)
+        public GameViewModel createGame(GameViewModel gameVM)
         {
-            /*GameViewModel game = new GameViewModel();
-            game.User1 = user1;
-            game.User2 = user2;
-            game.p1_characs = p1_characters;
-            game.p2_characs = p2_characters;*/
+            _game.User1 = gameVM.User1;
+            _game.User2 = gameVM.User2;
+            _game.p1_characs = gameVM.p1_characs;
+            _game.p2_characs = gameVM.p2_characs;
             
-            string output = JsonConvert.SerializeObject(game);
-            Console.WriteLine(output);
-
-            return Ok(output);
+            string output = JsonConvert.SerializeObject(_game);
+            //Console.WriteLine(output);
+            Console.WriteLine(_game.ToString());
+            return _game;
         }
+
+        [HttpPost("games/attack/attackedPlayer/{pid}/attackedCharacter/{cid}/damage/{damage}")]
+        public GameViewModel attack(int pid, int cid, int damage)
+        {
+            //Console.WriteLine(game.User1);
+            if(_game.User1.Id == pid)
+            {
+                Console.WriteLine("hna");
+                this._game.p1_characs.First(c => c.Id == cid).HeathPoints -= damage;
+            }
+            else
+            {
+                Console.WriteLine("lheh 7sn mn hna");
+                this._game.p2_characs.First(c => c.Id == cid).HeathPoints -= damage;
+            }
+            return _game;
+        }
+
     }
 }
