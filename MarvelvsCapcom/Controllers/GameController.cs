@@ -62,12 +62,12 @@ namespace MarvelvsCapcom.Controllers
             if(_game.User1.Id == pid)
             {
                 Console.WriteLine("hna");
-                this._game.p1_characs.First(c => c.Id == cid).HeathPoints -= damage;
+                this._game.p1_characs.First(c => c.Id == cid).HeathPoints -= (int?) damage;
             }
             else
             {
                 Console.WriteLine("lheh 7sn mn hna");
-                this._game.p2_characs.First(c => c.Id == cid).HeathPoints -= damage;
+                this._game.p2_characs.First(c => c.Id == cid).HeathPoints -= (int?) damage;
             }
             return _game;
         }

@@ -18,6 +18,6 @@
         public int Ab2Id { get; set; }
         public int Ab3Id { get; set; }
         public int Ab4Id { get; set; }
-        public int HeathPoints { get; set; }
+        public int? HeathPoints { get; set; }
     }
 }
