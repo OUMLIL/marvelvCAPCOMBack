@@ -2,6 +2,10 @@
 {
     public class CharactersDetailDTO
     {
+        public CharactersDetailDTO()
+        {
+
+        }
         public int Id { get; set; }
         public string CharName { get; set; } = null!;
         public string? Side { get; set; }

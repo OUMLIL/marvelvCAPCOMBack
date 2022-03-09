@@ -13,6 +13,10 @@ using MarvelvsCapcom.DAL.Extensions;
 using MarvelvsCapcom.DAL.Repositories;
 using MarvelvsCapcom.BL.Services;
 using MarvelvsCapcom.ViewModels;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+
 
 namespace MarvelvsCapcom.Controllers
 {
@@ -27,11 +31,19 @@ namespace MarvelvsCapcom.Controllers
          
         }*/
 
-        [HttpGet ("games")]
-        public GameDTO createGame(GameDTO game)
+        [HttpPost("games")]
+        public IActionResult createGame(GameViewModel game)
         {
-            Console.WriteLine(game.ToString());
-            return game;
+            /*GameViewModel game = new GameViewModel();
+            game.User1 = user1;
+            game.User2 = user2;
+            game.p1_characs = p1_characters;
+            game.p2_characs = p2_characters;*/
+            
+            string output = JsonConvert.SerializeObject(game);
+            Console.WriteLine(output);
+
+            return Ok(output);
         }
     }
 }
